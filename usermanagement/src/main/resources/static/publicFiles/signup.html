@@ -17,24 +17,39 @@
 </head>
 <body>
     <section id="form-sect">
-        <form action="/sign-up" method="post" id="form">
-            <h1>Sign Up</h1>
+        <form action="/create-account" method="post" id="form">
+            <h1>Create Account</h1>
 
             <div class="div-parent">
+
+                <div class="div-child">
+                    <label for="name">Insert Profile Picture</label>
+                    <input type="file" id="picture" name="picture" required>
+                </div>
+
                 <div class="div-child">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+
+                <div class="div-child">
+                    <label for="name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+
                 <div class="div-child">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
+
                 <div class="div-child">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
+
             </div>
             <button type="submit" id="subbtn">Create Account</button>
+            <a href="/" class="redirect-link">Login</a>
         </form>
     </section>
 </body>
