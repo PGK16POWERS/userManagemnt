@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a, li, button {
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #f2f1ec;
+    font-family: var(--monts);
+}
+
+:root {
+    --monts: 'Montserrat', sans-serif;
+}
+
+/* USER PROFILE STYLES */
+
+#user-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-modal {
+    width: 600px;
+    height: auto;
+    background-color: #ffffff;
+    border: 0 solid transparent;
+    border-radius: 5px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.profile-pic-div {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    height: 150px;
+    width: 150px;
+    background-color: gainsboro;
+    border:0 solid transparent;
+    border-radius: 5px
+}
