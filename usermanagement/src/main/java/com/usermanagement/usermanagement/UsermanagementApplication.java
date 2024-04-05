@@ -12,6 +12,7 @@ public class UsermanagementApplication {
 		DatabaseOperation databaseOperation = new DatabaseOperation();
 
 		databaseOperation.getClass();
+
 	}
 
 }
