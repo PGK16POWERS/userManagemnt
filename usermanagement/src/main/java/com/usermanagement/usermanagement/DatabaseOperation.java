@@ -10,7 +10,9 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class DatabaseOperation {
     public static void main(String[] args) {
         String connectionString = "mongodb+srv://Marjella:Marjella@diamondburg.lxfxn0d.mongodb.net/?retryWrites=true&w=majority&appName=DiamondBurg";
