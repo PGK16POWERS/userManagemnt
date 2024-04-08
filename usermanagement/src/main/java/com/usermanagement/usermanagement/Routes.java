@@ -1,4 +1,5 @@
 package com.usermanagement.usermanagement;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.core.io.Resource;
@@ -58,7 +59,7 @@ public class Routes {
         user.setEmail(email);
         user.setPassword(password);
 
-        userRepository.save(user);
+        userRepository.insert(user);
         return "Received POST request for signup with email: " + email + " and password: " + password;
     }
     
