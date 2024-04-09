@@ -5,22 +5,24 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.core.io.Resource;
 import java.nio.charset.StandardCharsets;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.StreamUtils;
 import java.io.IOException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
+import org.bson.Document;
+
 
 @RestController
-public class Routes {
-
-    @Autowired
-    private UserRepository userRepository; 
+public class Routes { 
 
     // THIS ENABLES US TO HANDLE GET REQUESTS
-
     @GetMapping("/")
     public String LoginPath() throws IOException {
         Resource resource = new ClassPathResource("static/publicFiles/login.html");
@@ -51,15 +53,25 @@ public class Routes {
     // POST REQUESTS    
 
     @PostMapping("/signup")
-    public String postMethodName(@RequestParam String picture,@RequestParam String name,@RequestParam String lastName,@RequestParam String email, @RequestParam String password) {
-        User user = new User();
-        user.setPicture(picture);
-        user.setName(name);
-        user.setLastName(lastName);
-        user.setEmail(email);
-        user.setPassword(password);
+    public String postMethodName(@RequestParam("picture") String picture,@RequestParam("name") String name,@RequestParam("lastName") String lastName,@RequestParam("email") String email, @RequestParam("password") String password) {
+        
+        try {
+            
+            MongoClient connection = MongoClients.create("mongodb+srv://Marjella:Marjella@diamondburg.lxfxn0d.mongodb.net/?retryWrites=true&w=majority&appName=DiamondBurg");
 
-        userRepository.insert(user);
+            MongoDatabase database = connection.getDatabase("TESTER");
+ 
+            MongoCollection<Document> collection = database.getCollection("DNTFALL");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+
+
+
+
+        
         return "Received POST request for signup with email: " + email + " and password: " + password;
     }
     
