@@ -63,6 +63,12 @@ public class Routes {
  
             MongoCollection<Document> collection = database.getCollection("DNTFALL");
 
+            Document document = new Document();
+            document.append("picture",picture);
+            document.append("name", name);
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
