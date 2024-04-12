@@ -65,6 +65,8 @@ public class Routes {
 
             Document document = new Document();
             document.append("picture",picture);
+
+            document.append("password",password);
             document.append("name", name);
 
 
